@@ -1,0 +1,31 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin secpadding($value) {
+  padding: $value 0;
+}
+
+@mixin backgroundcolor($color) {
+  background-color: $color;
+}
+
+@mixin color($color) {
+  color: $color;
+}
+@mixin backgroundimage($image) {
+  background-image: url($image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@mixin assignwidth($getwidth) {
+  width: $getwidth;
+}
+@mixin assignmaxwidth($getmaxwidth,$width) {
+  max-width: $getmaxwidth;
+  width: $width;
+}

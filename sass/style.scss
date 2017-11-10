@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans");
+//@import 'bootstrap';
+@import "variables", "mixins";
+//@import 'mixins';
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 1rem;
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  @include assignwidth(100%);
+}
+.bodybg {
+  @include backgroundimage("../images/bodyg.jpg");
+}
+.block {
+  float: left;
+  @include assignwidth(100%);
+}
+.box {
+  @include border-radius(10px);
+}
+.sectionpadding40 {
+  @include secpadding(40px);
+}
+
+.redbg {
+  @include backgroundcolor(red);
+}
+.blackbg {
+  @include backgroundcolor(#000);
+}
+
+.message {
+  border: 1px solid #fff;
+  @include secpadding(10px);
+}
+.whitecolor {
+  @include color(#fff);
+}
+.error-message {
+  @extend .message;
+  border-color: red;
+}
+header {
+  margin-top: 55px;
+}
+.mainmenu {
+  max-width: calc(100% - 125px);
+  float: right;
+  line-height: 42px;
+  font-family: "PT Sans", sans-serif;
+  nav {
+    float: right;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 15px;
+      a {
+        text-decoration: none;
+        @include color(#fff);
+        font-size: 1.13rem;
+        @extend .boldfont;
+        &:hover {
+          @include color(red);
+        }
+      }
+    }
+  }
+}
+.nomargin {
+  margin: 0;
+}
+.boldfont {
+  font-weight: 700;
+}
+.textdecoration {
+  text-decoration: none;
+}
+.container {
+  margin: $centermargin;
+  max-width: 1070px;
+  padding: 0 10px;
+  @media (min-width: 240px) and (max-width: 767px) {
+    max-width: 90%;
+    @include assignwidth(100%);
+  }
+}
+.logo {
+  float: left;
+  max-width: 125px;
+  @include assignwidth(100%);
+}
+.bannertextsize {
+  font-size: 1.66rem;
+}
+.bannertext {
+  position: absolute;
+  bottom: 20%;
+  @include assignmaxwidth(490px,100%);
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+  }
+  p {
+    margin-bottom: 30px;
+    @extend .bannertextsize;
+  }
+  a {
+    @include backgroundcolor(#2595ff);
+    @include assignmaxwidth(255px,100%);
+    text-align: center;
+    display: inline-block;
+    @include secpadding(15px);
+    @extend .bannertextsize;
+  }
+}
+@media (min-width: 240px) and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+}
